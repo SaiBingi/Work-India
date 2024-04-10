@@ -104,6 +104,11 @@
     font-size: 20px;
 }
 
+.release-date {
+    color: lightblue;
+    line-height: 2em;
+}
+
 @media screen and (max-width: 576px) {
     .right-side-con {
         display: none;

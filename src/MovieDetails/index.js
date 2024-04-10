@@ -78,7 +78,7 @@ const MovieDetails = () => {
                     ))}
                 </div>
                 <p>
-                  Release Date: &nbsp;
+                  <span className="release-date">Release Date: </span>&nbsp;
                   {formatDate(movieDetails.release_date)}
                 </p>
               </div>
