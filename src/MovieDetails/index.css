@@ -2,18 +2,33 @@
     background-color: #34363b;
     color: #fff;
     display: flex;
+    flex-direction: column;
 }
 
 .movie-card {
     display: flex;
     background-color: #272727;
-    margin: 30px;
     border-radius: 10px;
+    margin: 30px;
+    width: calc(100% - 60px);
 }
 
 .movie-detail-poster {
-    width: 150px;
-    height: 250px;
+    width: 20vw;
+    height: 250px
+}
+
+.left-side-con {
+    width: 50%;
+}
+
+.right-side-con {
+    width: 50%;
+}
+
+.cast-img {
+    width: 200px;
+    border-radius: 3px;
 }
 
 .strike {
@@ -36,8 +51,96 @@
 .con {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .overview {
     line-height: 1.5em;
+}
+
+.cast-heading {
+    font-size: 19px;
+}
+
+.bottom-con {
+    margin: 20px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.card-item {
+    width: 200px;
+    border-radius: 3px;
+}
+
+.cast-title {
+    color: #fff;
+    font-size: 14px;
+}
+
+.cast-desc {
+    color: #fff;
+    font-size: 14px;
+}
+
+.genre {
+    margin: 0;
+    padding: 0;
+}
+
+.backdrop-poster {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.get-movie-title{
+    font-size: 20px;
+}
+
+@media screen and (max-width: 576px) {
+    .right-side-con {
+        display: none;
+    }
+
+    .cast-img {
+        width: 95vw;
+        height: 300px;
+        object-fit: fill;
+    }
+
+    .cards-container {
+        gap: 20px;
+    }
+
+    .bottom-con {
+        margin: 0 10px;
+    }
+
+    .first-con {
+        flex-direction: column;
+        padding: 0;
+        /* width: calc(100vw - 40px); */
+        margin: 10px;
+    }
+
+    .movie-card {
+        flex-direction: column;
+        margin: 10px;
+        width: calc(100% - 20px);
+    }
+
+    .movie-detail-poster {
+        width: 100%;
+    }
+
+    .left-side-con {
+        width: 100%;
+    }
 }

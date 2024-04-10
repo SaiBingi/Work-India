@@ -1,5 +1,6 @@
 .poster-img {
-    width: 200px;
+    width: 100%;
+    border-radius: 3px;
 }
 
 .cards {
@@ -11,7 +12,8 @@
 }
 
 .card {
-    width: 200px;
+    width: 15vw;
+    border-radius: 3px;
 }
 
 .title {
@@ -29,9 +31,26 @@
 .card-link {
     text-decoration: none;
     color: inherit;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease-in-out 0s;
 }
 
 .card-link:hover {
     transform: scale(1.05);
+}
+
+
+@media screen and (max-width: 576px) {
+    .cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .poster-img {
+        height: 300px
+    }
+
+    .card {
+        width: 90vw;
+        margin: auto;
+    }
 }

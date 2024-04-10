@@ -7,6 +7,7 @@ import "./index.css";
 const MovieDetails = () => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState({});
+  const [castDetails, setCastDetails] = useState([]);
   const apiKey = REACT_APP_API_KEY;
 
   const fetchMovieDetails = async () => {
@@ -21,8 +22,22 @@ const MovieDetails = () => {
     }
   };
 
+  const fetchMovieCastDetails = async () => {
+    try {
+      const url = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apiKey}&language=en-US`;
+      const response = await fetch(url);
+      const data = await response.json();
+      const { cast } = data;
+      setCastDetails(cast);
+      console.log(cast);
+    } catch (error) {
+      console.error("Error fetching movie details:", error);
+    }
+  };
+
   useEffect(() => {
     fetchMovieDetails();
+    fetchMovieCastDetails();
   }, [id]);
 
   const formatDate = (inputDate) => {
@@ -41,25 +56,29 @@ const MovieDetails = () => {
       <Header />
       <div className="movie-details-container">
         <div className="movie-card">
-          <div>
+          <div className="left-side-con">
             <div className="first-con">
-              <img
-                src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
-                className="movie-detail-poster"
-                alt="poster"
-              />
+              <div>
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
+                  className="movie-detail-poster"
+                  alt="poster"
+                />
+              </div>
               <div className="first-con-desc">
-                <h1>{movieDetails.title}</h1>
+                <h1 className="get-movie-title">{movieDetails.title}</h1>
                 <p>Rating: {movieDetails.vote_average}</p>
                 <div className="con">
                   <p>{movieDetails.runtime} min</p>
                   {movieDetails.genres &&
                     movieDetails.genres.map((each) => (
-                      <p key={each.id}>{each.name}</p>
+                      <p key={each.id} className="genre">
+                        {each.name}
+                      </p>
                     ))}
                 </div>
                 <p>
-                  <span className="strike">Rele</span>ase Date: &nbsp;
+                  Release Date: &nbsp;
                   {formatDate(movieDetails.release_date)}
                 </p>
               </div>
@@ -69,11 +88,31 @@ const MovieDetails = () => {
               <p className="overview">{movieDetails.overview}</p>
             </div>
           </div>
-          <img
-            src={`https://image.tmdb.org/t/p/w500${movieDetails.backdrop_path}`}
-            className="movie-detail-backdrop-poster"
-            alt="backdrop-poster"
-          />
+          <div className="right-side-con">
+            <img
+              src={`https://image.tmdb.org/t/p/w500${movieDetails.backdrop_path}`}
+              alt="backdrop-poster"
+              className="backdrop-poster"
+            />
+          </div>
+        </div>
+        <div className="bottom-con">
+          <h1 className="cast-heading">Cast</h1>
+          <div className="cards-container">
+            {castDetails.map((each) => (
+              <div className="card-item" key={each.id}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${each.profile_path}`}
+                  className="cast-img"
+                  alt="cast-profile-img"
+                />
+                <div>
+                  <h1 className="cast-title">{each.name}</h1>
+                  <p className="cast-desc">Character: {each.character}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>
