@@ -3,8 +3,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "./index.css";
 
 const Header = () => {
-  const apiKey = process.env.REACT_APP_API_KEY;
-  // console.log(apiKey)
 
   const navigate = useNavigate();
   const [searchMovieName, setSearchMovieName] = useState("");

@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../Header";
+import { REACT_APP_API_KEY } from "../apiKey";
 import "./index.css";
 
 const MovieDetails = () => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState({});
-  const apiKey = process.env.REACT_APP_API_KEY;
+  const apiKey = REACT_APP_API_KEY;
 
   const fetchMovieDetails = async () => {
     try {

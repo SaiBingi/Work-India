@@ -3,12 +3,13 @@ import Header from "../Header";
 // import dotenv from 'dotenv';
 import Cards from '../commonComponents/Cards'
 import "./index.css";
+import { REACT_APP_API_KEY } from "../apiKey";
 
 // dotenv.config();
 
 
 const Home = () => {
-    const apiKey = process.env.REACT_APP_API_KEY
+    const apiKey = REACT_APP_API_KEY
     // console.log(apiKey)
 
     const [movies, setMovies] = useState([]);

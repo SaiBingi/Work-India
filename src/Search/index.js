@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../Header';
 import Cards from '../commonComponents/Cards';
+import { REACT_APP_API_KEY } from "../apiKey";
 import './index.css'
 
 const Search = () => {
@@ -11,7 +12,7 @@ const Search = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const apiKey = process.env.REACT_APP_API_KEY;
+        const apiKey = REACT_APP_API_KEY;
         const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${query}&page=1`;
         const response = await fetch(url);
         const data = await response.json();
