@@ -110,13 +110,17 @@
     }
 
     .cast-img {
-        width: 95vw;
-        height: 300px;
+        width: 44vw;
+        /* height: 400px; */
         object-fit: fill;
     }
 
     .cards-container {
-        gap: 20px;
+        gap: 12px;
+    }
+
+    .card-item {
+        width: 44vw;
     }
 
     .bottom-con {

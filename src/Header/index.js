@@ -58,19 +58,19 @@ const Header = () => {
           <div className="mobile-menu">
             <NavLink
               to="/"
-              className="menu-item active-item"
+              className="menu-item-mb"
             >
               Popular
             </NavLink>
             <NavLink
               to="/top-rated"
-              className="menu-item active-item"
+              className="menu-item-mb"
             >
               Top Rated
             </NavLink>
             <NavLink
               to="/upcoming"
-              className="menu-item active-item"
+              className="menu-item-mb"
             >
               Upcoming
             </NavLink>
