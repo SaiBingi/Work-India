@@ -1,0 +1,43 @@
+.movie-details-container {
+    background-color: #34363b;
+    color: #fff;
+    display: flex;
+}
+
+.movie-card {
+    display: flex;
+    background-color: #272727;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+.movie-detail-poster {
+    width: 150px;
+    height: 250px;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+.first-con {
+    display: flex;
+    padding: 10px;
+}
+
+.second-con {
+    padding: 10px;
+}
+
+.first-con-desc {
+    padding-left: 20px;
+}
+
+.con {
+    display: flex;
+    gap: 10px;
+}
+
+.overview {
+    line-height: 1.5em;
+}

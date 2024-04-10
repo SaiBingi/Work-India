@@ -1,0 +1,37 @@
+.poster-img {
+    width: 200px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.card {
+    width: 200px;
+}
+
+.title {
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+}
+
+.rating {
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.card-link:hover {
+    transform: scale(1.05);
+}
